@@ -32,14 +32,7 @@ export function renderMapa() {
     
     <!-- Thumb-Zone / Bottom Sheet Area -->
     <div class="absolute bottom-[100px] left-0 w-full px-gutter flex flex-col gap-4 pointer-events-none z-40">
-        <!-- Search Bar (Thumb accessible) -->
-        <div class="bg-surface rounded-xl shadow-[0_8px_24px_rgba(22,52,46,0.08)] p-3 flex items-center gap-3 pointer-events-auto border border-surface-variant">
-            <span class="material-symbols-outlined text-primary px-2">search</span>
-            <input id="map-search-input" class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface placeholder:text-outline p-0" placeholder="Search for parks, cafes, vets..." type="text"/>
-            <button data-action="open-filtro" class="bg-primary-container text-on-primary-container p-2 rounded-lg aspect-square flex items-center justify-center hover:opacity-90 transition-opacity">
-                <span class="material-symbols-outlined">tune</span>
-            </button>
-        </div>
+
         
 
     </div>
@@ -138,14 +131,19 @@ export function initMap() {
         }
     });
 
-    // Add search listener
-    const searchInput = document.getElementById('map-search-input');
+    // Add search listener (now tied to the global overlay search input)
+    const searchInput = document.getElementById('global-search-input');
     if (searchInput) {
-        searchInput.addEventListener('keydown', (e) => {
+        // Remove old listeners to prevent duplicates if initMap runs multiple times
+        const newSearchInput = searchInput.cloneNode(true);
+        searchInput.parentNode.replaceChild(newSearchInput, searchInput);
+        
+        newSearchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                const query = searchInput.value.toLowerCase().trim();
+                const query = newSearchInput.value.toLowerCase().trim();
                 if (cities[query]) {
                     map.flyTo(cities[query], 15);
+                    window.closeOverlay('search-overlay');
                 } else {
                     alert('City not found. Try: Recife, Toronto, Zagreb, Brussels, New York, Coimbra');
                 }

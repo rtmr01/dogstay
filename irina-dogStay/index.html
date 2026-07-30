@@ -115,6 +115,23 @@
     <div id="bottom-nav-container"></div>
 
     <!-- Overlays -->
+    <div id="search-overlay" class="overlay-container fixed inset-0 flex flex-col justify-start bg-surface/95 backdrop-blur-md pt-safe-area-top">
+        <div class="px-gutter py-4 flex gap-3 items-center w-full">
+            <button onclick="window.closeOverlay('search-overlay')" class="text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div class="flex-grow bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant p-2 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary px-2">search</span>
+                <input id="global-search-input" class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface placeholder:text-outline p-0" placeholder="Search for parks, cafes, vets..." type="text" autofocus />
+                <button data-action="open-filtro" class="text-on-surface-variant p-2 flex items-center">
+                    <span class="material-symbols-outlined">tune</span>
+                </button>
+            </div>
+        </div>
+        <div id="search-results" class="flex-grow px-gutter overflow-y-auto">
+            <!-- Recent searches could go here -->
+        </div>
+    </div>
     <div id="filtro-overlay" class="overlay-container fixed inset-0 flex flex-col justify-end bg-surface/50 backdrop-blur-sm">
         <div id="filtro-container" class="bg-surface h-[85vh] rounded-t-3xl shadow-[0_-8px_30px_rgba(13,27,54,0.1)] flex flex-col">
             <!-- Content injected here -->

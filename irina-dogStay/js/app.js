@@ -83,6 +83,18 @@ function setupInteractions() {
             document.getElementById('detalhe-overlay').classList.add('overlay-visible');
         });
     }
+
+    // Open Search overlay
+    const searchBtn = document.querySelector('[data-action="open-search"]');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            document.getElementById('search-overlay').classList.remove('overlay-hidden');
+            document.getElementById('search-overlay').classList.add('overlay-visible');
+            setTimeout(() => {
+                document.getElementById('global-search-input')?.focus();
+            }, 300);
+        });
+    }
     
     // Close overlays from their backgrounds
     document.querySelectorAll('.overlay-container').forEach(overlay => {

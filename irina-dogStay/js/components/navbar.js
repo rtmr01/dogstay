@@ -1,21 +1,25 @@
 export function renderNavbar(activePage) {
     const bottomNavHtml = `
-    <nav class="fixed bottom-0 left-0 w-full z-[35] flex justify-around items-center px-4 pb-safe-area-bottom pt-3 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_20px_rgba(13,27,54,0.05)] rounded-t-lg md:hidden">
-        <a href="#mapa" class="flex flex-col items-center justify-center ${activePage === 'mapa' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-5 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
+    <nav class="fixed bottom-0 left-0 w-full z-[35] flex justify-around items-center px-2 pb-safe-area-bottom pt-3 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_20px_rgba(13,27,54,0.05)] rounded-t-lg md:hidden">
+        <a href="#mapa" class="flex flex-col items-center justify-center ${activePage === 'mapa' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-3 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
             <span class="material-symbols-outlined mb-1 ${activePage === 'mapa' ? 'icon-fill' : ''}" data-icon="map">map</span>
-            <span class="font-label-sm text-label-sm">Map</span>
+            <span class="font-label-sm text-[10px]">Map</span>
         </a>
-        <a href="#explorar" class="flex flex-col items-center justify-center ${activePage === 'explorar' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-5 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
+        <a href="#explorar" class="flex flex-col items-center justify-center ${activePage === 'explorar' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-3 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
             <span class="material-symbols-outlined mb-1 ${activePage === 'explorar' ? 'icon-fill' : ''}" data-icon="explore">explore</span>
-            <span class="font-label-sm text-label-sm">Explore</span>
+            <span class="font-label-sm text-[10px]">Explore</span>
         </a>
-        <a href="#conquistas" class="flex flex-col items-center justify-center ${activePage === 'conquistas' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-5 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
+        <button data-action="open-search" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-xl px-3 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
+            <span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+            <span class="font-label-sm text-[10px]">Search</span>
+        </button>
+        <a href="#conquistas" class="flex flex-col items-center justify-center ${activePage === 'conquistas' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-3 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
             <span class="material-symbols-outlined mb-1 ${activePage === 'conquistas' ? 'icon-fill' : ''}" data-icon="military_tech">military_tech</span>
-            <span class="font-label-sm text-label-sm">Achievements</span>
+            <span class="font-label-sm text-[10px]">Achieve</span>
         </a>
-        <a href="#perfil" class="flex flex-col items-center justify-center ${activePage === 'perfil' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-5 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
+        <a href="#perfil" class="flex flex-col items-center justify-center ${activePage === 'perfil' ? 'bg-secondary-container text-on-secondary-container' : 'text-on-surface-variant hover:bg-surface-container-high'} rounded-xl px-3 py-2.5 scale-98 active:scale-95 duration-200 ease-out transition-all">
             <span class="material-symbols-outlined mb-1 ${activePage === 'perfil' ? 'icon-fill' : ''}" data-icon="person">person</span>
-            <span class="font-label-sm text-label-sm">Profile</span>
+            <span class="font-label-sm text-[10px]">Profile</span>
         </a>
     </nav>
     `;
@@ -38,6 +42,9 @@ export function renderNavbar(activePage) {
             </a>
         </div>
         <div class="flex gap-4 items-center">
+            <button data-action="open-search" class="w-10 h-10 rounded-full bg-surface shadow-sm flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined">search</span>
+            </button>
             <button class="w-10 h-10 rounded-full bg-surface shadow-sm flex items-center justify-center text-primary">
                 <span class="material-symbols-outlined">notifications</span>
             </button>
