@@ -53,8 +53,8 @@ window.addEventListener('hashchange', () => {
 // Setup dynamic interactions (like opening overlays)
 function setupInteractions() {
     // Open Filtro Match overlay
-    const tuneBtn = document.querySelector('[data-action="open-filtro"]');
-    if (tuneBtn) {
+    const tuneBtns = document.querySelectorAll('[data-action="open-filtro"]');
+    tuneBtns.forEach(tuneBtn => {
         tuneBtn.addEventListener('click', () => {
             const container = document.getElementById('filtro-container');
             container.innerHTML = renderFiltroMatch();
@@ -71,7 +71,7 @@ function setupInteractions() {
                 });
             }
         });
-    }
+    });
 
     // Open Detalhe overlay
     const placeCard = document.querySelector('[data-action="open-detalhe"]');
@@ -85,16 +85,16 @@ function setupInteractions() {
     }
 
     // Open Search overlay
-    const searchBtn = document.querySelector('[data-action="open-search"]');
-    if (searchBtn) {
-        searchBtn.addEventListener('click', () => {
+    const searchBtns = document.querySelectorAll('[data-action="open-search"]');
+    searchBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             document.getElementById('search-overlay').classList.remove('overlay-hidden');
             document.getElementById('search-overlay').classList.add('overlay-visible');
             setTimeout(() => {
                 document.getElementById('global-search-input')?.focus();
             }, 300);
         });
-    }
+    });
     
     // Close overlays from their backgrounds
     document.querySelectorAll('.overlay-container').forEach(overlay => {
