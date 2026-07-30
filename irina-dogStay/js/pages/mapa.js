@@ -41,30 +41,7 @@ export function renderMapa() {
             </button>
         </div>
         
-        <!-- Bottom Sheet Preview Card -->
-        <div data-action="open-detalhe" class="bg-surface rounded-2xl shadow-[0_12px_32px_rgba(22,52,46,0.12)] p-4 pointer-events-auto border border-surface-variant flex gap-4 items-center cursor-pointer card-press">
-            <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 relative bg-surface-variant">
-                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMCMb3FnT7tfE-TLaHZUiMog9K5SpmqXceujPi5GV_y1OeMIM0VWe5NSW5vodX2dZChH7V2yqQv0gTg_LR07qnt46LsSn7ZnpbNVreg3vclrZ1VGSr9Hjg7ZeLlLXj1sKqxJ6yfvw-U39AtnJiBNdTentsOKh5CZ15ieUYFht0gBsp3cAxmwX2ub_mOhIBzLpLVqo11ijprgwfpeUeI60pqr62CF_tvtjpg2IboGGOTmYvKdXHT4C0"/>
-                <div class="absolute top-1 left-1 bg-surface/90 backdrop-blur rounded px-1.5 py-0.5 flex items-center gap-1">
-                    <span class="material-symbols-outlined text-[10px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="font-label-sm text-label-sm text-xs font-bold">4.8</span>
-                </div>
-            </div>
-            <div class="flex-grow min-w-0">
-                <h3 class="font-headline-lg-mobile text-xl font-bold text-on-surface truncate mb-1">Paw Cafe &amp; Co.</h3>
-                <p class="font-body-md text-sm text-on-surface-variant truncate mb-2">Cafe • 1.2km</p>
-                <div class="flex gap-2 overflow-x-auto hide-scrollbar">
-                    <span class="inline-flex items-center gap-1 bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-full whitespace-nowrap">
-                        <span class="material-symbols-outlined text-[12px]">water_drop</span>
-                        <span class="font-label-sm text-label-sm text-[10px]">Has water bowl</span>
-                    </span>
-                    <span class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-full whitespace-nowrap">
-                        <span class="material-symbols-outlined text-[12px]">space_dashboard</span>
-                        <span class="font-label-sm text-label-sm text-[10px]">Spacious</span>
-                    </span>
-                </div>
-            </div>
-        </div>
+
     </div>
     
     <!-- FAB (Contextual for Map - Maybe "Center on me" or "Add Place") -->
