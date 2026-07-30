@@ -16,7 +16,7 @@ export function renderExplorar() {
             <!-- Place Card 1 -->
             <div data-action="open-detalhe" class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_24px_rgba(22,52,46,0.08)] p-4 cursor-pointer card-press border border-surface-variant flex gap-4">
                 <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
-                    <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1548779951-692797682f9d?w=300&q=80" alt="High Park"/>
+                    <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=300&q=80" alt="High Park"/>
                 </div>
                 <div class="flex flex-col justify-center">
                     <div class="flex items-center gap-1 mb-1">
