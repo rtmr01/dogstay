@@ -1,0 +1,85 @@
+/* styles.css */
+body { font-family: 'Lexend', sans-serif; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Map specific subtle styles */
+.map-bg {
+    background-color: #e4e2de; /* surface-variant */
+    background-image: 
+        radial-gradient(#c1c8c5 1px, transparent 1px),
+        radial-gradient(#c1c8c5 1px, transparent 1px);
+    background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+}
+
+/* Slider custom styles */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #964824; /* secondary color */
+    cursor: pointer;
+    margin-top: -10px;
+    box-shadow: 0 4px 12px rgba(13,27,54,0.15);
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #c1c8c5; /* outline-variant */
+    border-radius: 2px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #accdc4; /* primary-fixed-dim */
+}
+
+/* Material Icons custom rules */
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.icon-fill { font-variation-settings: 'FILL' 1; }
+
+/* Shadows */
+.soft-shadow { box-shadow: 0 4px 20px rgba(13, 27, 54, 0.05); }
+.fab-shadow { box-shadow: 0 2px 4px rgba(13, 27, 54, 0.1), 0 12px 24px rgba(13, 27, 54, 0.15); }
+
+/* Circular Progress Animation */
+@keyframes progress {
+    0% { stroke-dasharray: 0, 100; }
+    100% { stroke-dasharray: 75, 100; }
+}
+.circular-progress {
+    animation: progress 2s ease-out forwards;
+}
+
+/* Micro-interactions */
+.card-press { transition: transform 0.2s ease-out; }
+.card-press:active { transform: scale(0.98); box-shadow: none; }
+
+.chip-interactive {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chip-interactive:active {
+    transform: scale(0.95);
+}
+
+/* Overlay Animations */
+.overlay-container {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+.overlay-container > div {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+}
+.overlay-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.overlay-visible > div {
+    transform: translateY(0);
+}
