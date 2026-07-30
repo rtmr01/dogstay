@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
     <title>Dog Stay</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
@@ -72,7 +72,9 @@
                     },
                     "spacing": {
                         "card-gap": "16px",
-                        "safe-area-bottom": "80px",
+                        "safe-area-bottom": "calc(env(safe-area-inset-bottom) + 12px)",
+                        "nav-height": "calc(env(safe-area-inset-bottom) + 88px)",
+                        "safe-area-top": "max(env(safe-area-inset-top), 16px)",
                         "touch-target-min": "48px",
                         "gutter": "20px",
                         "thumb-zone-padding": "32px"

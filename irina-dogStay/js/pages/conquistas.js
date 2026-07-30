@@ -1,6 +1,6 @@
 export function renderConquistas() {
     return `
-    <div class="h-full overflow-y-auto pb-safe-area-bottom pt-safe-area-top md:pt-24">
+    <div class="h-full overflow-y-auto pb-nav-height pt-safe-area-top md:pt-24">
         <header class="bg-surface dark:bg-surface-dim md:hidden flex justify-between items-center px-gutter py-4 w-full sticky top-0 z-40">
             <h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed tracking-tight">Dog Stay</h1>
             <div class="flex gap-4">
