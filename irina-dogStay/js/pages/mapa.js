@@ -3,8 +3,8 @@ export function renderMapa() {
     <div id="leaflet-map" class="absolute inset-0 z-0 h-full w-full"></div>
     
     <!-- Top Area (Mobile) -->
-    <div class="relative z-30 w-full md:hidden">
-        <div class="px-gutter pt-safe-area-top pb-4 flex justify-between items-center bg-gradient-to-b from-surface/80 to-transparent backdrop-blur-sm">
+    <div class="relative z-30 w-full md:hidden pointer-events-none">
+        <div class="px-gutter pt-safe-area-top pb-4 flex justify-between items-center bg-gradient-to-b from-surface/80 to-transparent backdrop-blur-sm pointer-events-auto">
             <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Dog Stay</div>
             <div class="flex gap-4">
                 <button class="w-10 h-10 rounded-full bg-surface shadow-md flex items-center justify-center text-primary active:scale-95 transition-transform">
@@ -139,7 +139,7 @@ export function initMap() {
         }
     });
 
-    // Add search listener (now tied to the global overlay search input)
+    // Search listener (tied to the global overlay search input)
     const searchInput = document.getElementById('global-search-input');
     if (searchInput) {
         // Remove old listeners to prevent duplicates if initMap runs multiple times
@@ -158,4 +158,35 @@ export function initMap() {
             }
         });
     }
+
+    // Quick Filters interaction
+    const filterChips = document.querySelectorAll('.overflow-x-auto button');
+    filterChips.forEach(chip => {
+        // Clear any old listeners
+        const newChip = chip.cloneNode(true);
+        chip.parentNode.replaceChild(newChip, chip);
+        
+        newChip.addEventListener('click', () => {
+            // Toggle active state styling
+            if (newChip.classList.contains('bg-primary')) {
+                // Deactivate
+                newChip.classList.remove('bg-primary', 'text-on-primary');
+                newChip.classList.add('bg-surface', 'text-on-surface');
+                const icon = newChip.querySelector('.material-symbols-outlined');
+                if(icon) {
+                    icon.classList.add('text-primary');
+                    icon.classList.remove('text-on-primary');
+                }
+            } else {
+                // Activate
+                newChip.classList.remove('bg-surface', 'text-on-surface');
+                newChip.classList.add('bg-primary', 'text-on-primary');
+                const icon = newChip.querySelector('.material-symbols-outlined');
+                if(icon) {
+                    icon.classList.remove('text-primary');
+                    icon.classList.add('text-on-primary');
+                }
+            }
+        });
+    });
 }
