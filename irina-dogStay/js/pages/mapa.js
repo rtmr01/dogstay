@@ -16,16 +16,24 @@ export function renderMapa() {
             </div>
         </div>
         
-        <!-- Pata Quente Widget -->
-        <div class="px-gutter mt-2">
-            <div class="bg-secondary-container text-on-secondary-container rounded-lg p-4 shadow-[0_8px_16px_rgba(253,154,111,0.2)] flex items-start gap-4">
-                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
-                </div>
-                <div>
-                    <h3 class="font-button-text text-button-text font-bold mb-1">Warning: Hot asphalt (32°C)</h3>
-                    <p class="font-body-md text-body-md text-sm opacity-90 leading-tight">Prefer shaded parks to avoid burning paws.</p>
-                </div>
+        <!-- Quick Filters -->
+        <div class="mt-3 w-full">
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar px-gutter pb-2 pt-1 pointer-events-auto">
+                <button class="bg-surface border border-surface-variant text-on-surface px-4 py-2 rounded-full font-label-sm text-sm whitespace-nowrap shadow-sm active:scale-95 transition-transform flex items-center gap-2 shrink-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">park</span> Parks
+                </button>
+                <button class="bg-surface border border-surface-variant text-on-surface px-4 py-2 rounded-full font-label-sm text-sm whitespace-nowrap shadow-sm active:scale-95 transition-transform flex items-center gap-2 shrink-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">local_cafe</span> Cafes
+                </button>
+                <button class="bg-surface border border-surface-variant text-on-surface px-4 py-2 rounded-full font-label-sm text-sm whitespace-nowrap shadow-sm active:scale-95 transition-transform flex items-center gap-2 shrink-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">medical_services</span> Vets
+                </button>
+                <button class="bg-surface border border-surface-variant text-on-surface px-4 py-2 rounded-full font-label-sm text-sm whitespace-nowrap shadow-sm active:scale-95 transition-transform flex items-center gap-2 shrink-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">water_drop</span> Water
+                </button>
+                <button class="bg-surface border border-surface-variant text-on-surface px-4 py-2 rounded-full font-label-sm text-sm whitespace-nowrap shadow-sm active:scale-95 transition-transform flex items-center gap-2 shrink-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">pets</span> Off-leash
+                </button>
             </div>
         </div>
     </div>
